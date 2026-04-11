@@ -6,104 +6,96 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const Hero = () => {
   return (
-    <section className="min-h-screen relative flex items-center pt-20 overflow-hidden">
-      {/* Background Animated Elements */}
-      <div className="absolute top-0 left-0 w-full h-full -z-10">
-        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary-900/20 blur-[120px] rounded-full animate-pulse-slow" />
-        <div className="absolute bottom-[10%] right-[0%] w-[35%] h-[35%] bg-blue-900/20 blur-[120px] rounded-full animate-float" />
-        <div className="absolute top-[20%] right-[10%] w-[20%] h-[20%] bg-purple-900/10 blur-[100px] rounded-full" />
-      </div>
+    <section className="min-h-screen relative flex items-center pt-20 diagonal-split">
+      {/* Background sectors */}
+      <div className="split-left" />
 
-      {/* Grid Pattern */}
-      <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 pointer-events-none -z-10" />
-      <div className="absolute inset-0 bg-dark-bg/40 -z-10" />
-
-      <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
+          className="lg:pr-12 pt-12"
         >
-          <motion.div
+          <motion.p
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="flex items-center gap-2 mb-6"
+            className="text-black font-extrabold tracking-widest uppercase text-sm mb-6"
           >
-            <span className="w-12 h-[1px] bg-primary-500" />
-            <span className="text-primary-400 font-medium tracking-wider uppercase text-sm">Open for Collaboration</span>
-          </motion.div>
+            Hi, I am
+          </motion.p>
 
-          <h1 className="text-6xl md:text-8xl font-bold tracking-tighter leading-tight mb-6">
-            Panga <span className="text-gradient">Syam</span><br />
-            Sundar Rao
+          <h1 className="text-7xl md:text-9xl font-black tracking-tight leading-[0.9] mb-6 text-black uppercase">
+            Panga<br />
+            Syamsundar
           </h1>
-
-          <p className="text-xl text-gray-400 max-w-lg mb-10 leading-relaxed">
-            I'm a <span className="text-white font-medium">Full Stack Java Developer</span> specializing in building high-performance, scalable web applications with modern architectures.
+          
+          <p className="text-sm text-gray-400 font-extrabold uppercase tracking-[0.2em] mb-12">
+            Full Stack Developer / Java Specialist
           </p>
 
-          <div className="flex flex-wrap gap-4 mb-12">
-            <Button href="#projects" className="min-w-[160px]">
-              View My Work <ChevronRight size={18} />
-            </Button>
-            <Button href="#contact" variant="secondary" className="min-w-[160px]">
-              Let's Talk
-            </Button>
+          <div className="flex items-center gap-4 mb-16">
+            <a href="#" className="square-icon p-2">
+              <FaGithub size={18} />
+            </a>
+            <a href="#" className="square-icon p-2">
+              <FaLinkedin size={18} />
+            </a>
+            <a href="#" className="square-icon p-2">
+               <MousePointer2 size={18} />
+            </a>
           </div>
+        </motion.div>
 
-          <div className="flex items-center gap-6">
-            <span className="text-sm text-gray-500 font-medium">Connect with me:</span>
-            <div className="flex items-center gap-4">
-              <a href="#" className="p-2 glass rounded-lg text-gray-400 hover:text-primary-400 hover:scale-110 transition-all">
-                <FaGithub size={20} />
-              </a>
-              <a href="#" className="p-2 glass rounded-lg text-gray-400 hover:text-primary-400 hover:scale-110 transition-all">
-                <FaLinkedin size={20} />
-              </a>
+        <div className="relative flex justify-center lg:justify-end">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1 }}
+            className="relative lg:-mr-12 lg:-mt-12 z-20"
+          >
+            {/* Main Hero Image - Placed to overlap split */}
+            <div className="relative w-80 h-80 lg:w-[600px] lg:h-[700px] flex items-end">
+              <img 
+                src="/SyamIMG.png" 
+                alt="Panga Syamsundar Rao" 
+                className="w-full h-full object-cover filter contrast-110 brightness-105"
+              />
             </div>
-          </div>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1 }}
-          className="relative hidden lg:block"
-        >
-          {/* Main Hero Image Container - Circular and Smaller */}
-          <div className="relative z-10 w-72 h-72 xl:w-80 xl:h-80 mx-auto rounded-full overflow-hidden shadow-[0_0_50px_rgba(139,92,246,0.3)] group border-2 border-white/10">
-            <img 
-              src="/Syam.webp" 
-              alt="Panga Syamsundar Rao" 
-              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-            />
-            {/* Overlay Gradient */}
-            <div className="absolute inset-0 bg-gradient-to-t from-dark-bg/40 via-transparent to-transparent opacity-60" />
-          </div>
-
-          {/* Decorative Circles */}
-          <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] border border-white/5 rounded-full" />
-          <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] border border-white/5 rounded-full" />
-        </motion.div>
+            
+            {/* Small credit text as seen in screenshot */}
+            <div className="absolute bottom-10 right-0 text-[10px] text-white/40 max-w-[120px] text-right leading-tight italic">
+              "Building robust backends and elegant frontends."
+            </div>
+          </motion.div>
+        </div>
       </div>
 
-      {/* Scroll Down Indicator */}
-      <motion.div 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-      >
-        <div className="w-[30px] h-[50px] rounded-full border-2 border-white/10 flex justify-center p-2">
-          <motion.div 
-            animate={{ y: [0, 15, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="w-1.5 h-1.5 rounded-full bg-primary-500"
-          />
+      {/* Bottom informational bar (IT BERRIES style) */}
+      <div className="absolute bottom-0 left-0 right-0 bg-black py-16 text-white overflow-hidden">
+        <div className="container mx-auto px-6 relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-8">
+          <div className="max-w-2xl">
+            <h3 className="text-xl font-black uppercase tracking-[0.3em] mb-6 border-l-4 border-white pl-4">Tech Stack Focus</h3>
+            <p className="text-gray-400 text-xs leading-relaxed font-bold uppercase tracking-widest">
+              Specializing in enterprise Java development, Spring Boot microservices, 
+              and high-performance React applications. Delivering scalable solutions 
+              with modern engineering practices.
+            </p>
+          </div>
+          
+          <div className="flex items-center gap-4 group cursor-pointer">
+            <div className="w-px h-12 bg-white/20" />
+            <span className="text-xs font-black uppercase tracking-[0.3em] hover:text-gray-300 transition-colors">Read More</span>
+            <div className="w-px h-12 bg-white/20" />
+          </div>
         </div>
-        <span className="text-[10px] uppercase tracking-widest text-gray-500">Scroll Down</span>
-      </motion.div>
+
+        {/* Large "IT" Background Watermark */}
+        <div className="absolute right-[-20px] bottom-[-40px] opacity-10 pointer-events-none select-none">
+          <span className="text-[250px] font-black tracking-tighter text-white">IT</span>
+        </div>
+      </div>
     </section>
   );
 };

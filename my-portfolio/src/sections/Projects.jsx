@@ -45,99 +45,41 @@ const Projects = () => {
   ];
 
   return (
-    <Section id="projects" title="Selected Projects" subtitle="My Recent Work">
+    <Section id="projects" title="Portfolio" subtitle="A collection of my recent projects featuring scalable Java backends and modern React frontends." className="bg-black text-white">
       <div className="space-y-16">
-        {/* Featured Project */}
-        {projects.filter(p => p.featured).map((project, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="group relative"
-          >
-            <GlassCard className="p-0 overflow-hidden" hover={false}>
-              <div className="grid grid-cols-1 lg:grid-cols-2">
-                <div className="relative overflow-hidden aspect-video lg:aspect-auto">
-                  <img 
-                    src={project.image} 
-                    alt={project.title} 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-primary-900/20 group-hover:opacity-0 transition-opacity" />
-                </div>
-                
-                <div className="p-8 lg:p-12 flex flex-col justify-center">
-                  <div className="flex items-center gap-2 text-primary-400 font-bold uppercase tracking-widest text-xs mb-4">
-                    <Star size={14} fill="currentColor" /> {project.subtitle}
-                  </div>
-                  <h3 className="text-4xl font-bold mb-6">{project.title}</h3>
-                  <p className="text-gray-400 text-lg mb-8 leading-relaxed">
-                    {project.desc}
-                  </p>
-                  
-                  <div className="flex flex-wrap gap-2 mb-10">
-                    {project.tech.map((t, idx) => (
-                      <Badge key={idx}>{t}</Badge>
-                    ))}
-                  </div>
-                  
-                  <div className="flex flex-wrap gap-4">
-                    <Button href={project.live} target="_blank" className="min-w-[140px]">
-                      Live Demo <ExternalLink size={18} />
-                    </Button>
-                    <Button href={project.github} target="_blank" variant="secondary" className="min-w-[140px]">
-                      Source Code <FaGithub size={18} />
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            </GlassCard>
-            
-            {/* Background Glow for Featured */}
-            <div className="absolute -z-10 -top-10 -left-10 w-full h-full bg-primary-600/5 blur-[100px] rounded-full" />
-          </motion.div>
-        ))}
-
-        {/* Other Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.filter(p => !p.featured).map((project, i) => (
-            <GlassCard key={i} className="p-0 flex flex-col h-full" delay={i * 0.1}>
-              <div className="relative aspect-video overflow-hidden">
-                <img 
-                  src={project.image} 
-                  alt={project.title} 
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-dark-bg/80 to-transparent" />
-              </div>
-              
-              <div className="p-6 flex flex-col flex-grow">
-                <h3 className="text-xl font-bold mb-3">{project.title}</h3>
-                <p className="text-gray-400 text-sm mb-6 flex-grow">
-                  {project.desc}
-                </p>
-                
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.tech.map((t, idx) => (
-                    <Badge key={idx} className="text-[10px] px-2 py-0.5">{t}</Badge>
-                  ))}
-                </div>
-                
-                <div className="flex items-center gap-4 mt-auto">
+        {/* Simplified Project Grid as seen in screenshot */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border border-white/10">
+          {projects.map((project, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="group relative aspect-square overflow-hidden bg-black border border-white/10"
+            >
+              <img 
+                src={project.image} 
+                alt={project.title} 
+                className="w-full h-full object-cover transition-all duration-700 grayscale group-hover:grayscale-0 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-8 text-center">
+                <h3 className="text-xl font-black uppercase tracking-widest mb-4">{project.title}</h3>
+                <p className="text-xs text-gray-300 mb-6 font-bold">{project.desc}</p>
+                <div className="flex gap-4">
                   {project.live && (
-                    <a href={project.live} target="_blank" rel="noreferrer" className="text-gray-400 hover:text-primary-400 transition-colors">
-                      <ExternalLink size={20} />
+                    <a href={project.live} target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full border border-white flex items-center justify-center hover:bg-white hover:text-black transition-all">
+                      <ExternalLink size={18} />
                     </a>
                   )}
                   {project.github && (
-                    <a href={project.github} target="_blank" rel="noreferrer" className="text-gray-400 hover:text-primary-400 transition-colors">
-                      <FaGithub size={20} />
+                    <a href={project.github} target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full border border-white flex items-center justify-center hover:bg-white hover:text-black transition-all">
+                      <FaGithub size={18} />
                     </a>
                   )}
                 </div>
               </div>
-            </GlassCard>
+            </motion.div>
           ))}
         </div>
       </div>

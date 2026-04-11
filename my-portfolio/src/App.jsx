@@ -33,8 +33,8 @@ function App() {
   return (
     <div className="relative overflow-x-hidden">
       {/* Global Background Decorations */}
-      <div className="fixed inset-0 -z-50 bg-dark-bg">
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-mesh opacity-30" />
+      <div className="fixed inset-0 -z-50 bg-white">
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-mesh opacity-50" />
       </div>
 
       <Navbar />

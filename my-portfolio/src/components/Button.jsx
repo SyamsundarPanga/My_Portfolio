@@ -5,10 +5,10 @@ const Button = ({ children, onClick, variant = 'primary', className = "", href, 
   const baseStyles = "px-6 py-3 rounded-xl font-medium transition-all duration-300 flex items-center justify-center gap-2 group relative overflow-hidden";
   
   const variants = {
-    primary: "bg-primary-600 text-white hover:bg-primary-700 shadow-[0_0_20px_rgba(139,92,246,0.3)] hover:shadow-[0_0_30px_rgba(139,92,246,0.5)]",
-    secondary: "glass-dark text-white hover:bg-white/10 border-white/10 hover:border-white/20",
-    outline: "bg-transparent border border-primary-500/50 text-white hover:bg-primary-500/10",
-    ghost: "bg-transparent text-gray-400 hover:text-white hover:bg-white/5",
+    primary: "bg-black text-white hover:bg-gray-800 shadow-[0_4px_14px_0_rgba(0,0,0,0.1)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.15)]",
+    secondary: "bg-gray-100 text-black hover:bg-gray-200 border-gray-200",
+    outline: "bg-transparent border border-black text-black hover:bg-black/5",
+    ghost: "bg-transparent text-gray-600 hover:text-black hover:bg-black/5",
   };
 
   const content = (

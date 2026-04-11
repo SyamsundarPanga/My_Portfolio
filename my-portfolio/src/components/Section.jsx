@@ -6,34 +6,28 @@ const Section = ({ id, title, subtitle, children, className = "", container = tr
     <section id={id} className={`py-24 relative overflow-hidden ${className}`}>
       <div className={`${container ? 'container mx-auto px-6' : ''}`}>
         {(title || subtitle) && (
-          <div className="mb-16 text-center md:text-left">
+          <div className="mb-20 text-center flex flex-col items-center">
+            {title && (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                className="boxed-header bg-white mb-6"
+              >
+                {title}
+              </motion.div>
+            )}
             {subtitle && (
-              <motion.span
+              <motion.p
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="text-primary-500 font-semibold tracking-widest uppercase text-sm mb-4 block"
+                transition={{ delay: 0.2 }}
+                className="text-gray-500 font-bold tracking-[0.3em] uppercase text-[10px] md:text-xs max-w-xl leading-relaxed"
               >
                 {subtitle}
-              </motion.span>
+              </motion.p>
             )}
-            {title && (
-              <motion.h2
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="text-4xl md:text-5xl font-bold tracking-tight"
-              >
-                {title}
-              </motion.h2>
-            )}
-            <motion.div
-              initial={{ width: 0 }}
-              whileInView={{ width: '100px' }}
-              viewport={{ once: true }}
-              transition={{ duration: 1, delay: 0.5 }}
-              className="h-1.5 bg-gradeint-to-r from-primary-600 to-blue-600 rounded-full mt-6 mx-auto md:mx-0"
-            />
           </div>
         )}
         {children}

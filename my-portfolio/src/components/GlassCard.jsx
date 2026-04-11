@@ -11,11 +11,11 @@ const GlassCard = ({ children, className = "", hover = true, delay = 0 }) => {
       whileHover={hover ? { y: -5, transition: { duration: 0.2 } } : {}}
       className={`glass-card rounded-2xl p-6 relative group overflow-hidden ${className}`}
     >
-      {/* Spotlight Effect Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      {/* Spotlight Effect Background - Subtle for Light Mode */}
+      <div className="absolute inset-0 bg-gradient-to-br from-black/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       
       {/* Shine Effect */}
-      <div className="absolute top-0 -left-[100%] w-1/2 h-full bg-gradient-to-r from-transparent via-white/5 to-transparent skew-x-[-25deg] group-hover:left-[150%] transition-all duration-1000 ease-in-out" />
+      <div className="absolute top-0 -left-[100%] w-1/2 h-full bg-gradient-to-r from-transparent via-black/5 to-transparent skew-x-[-25deg] group-hover:left-[150%] transition-all duration-1000 ease-in-out" />
       
       <div className="relative z-10">
         {children}

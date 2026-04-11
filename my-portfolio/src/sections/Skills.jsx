@@ -13,83 +13,65 @@ import { FaJava, FaAws } from 'react-icons/fa';
 import { Database, Layout, Server, Settings } from 'lucide-react';
 
 const Skills = () => {
-  const skillCategories = [
+  const sections = [
     {
-      title: "Backend",
-      icon: <Server className="text-primary-500" size={24} />,
+      title: "Using now:",
       skills: [
         { name: "Java", icon: <FaJava className="text-[#007396]" /> },
         { name: "Spring Boot", icon: <SiSpringboot className="text-[#6DB33F]" /> },
-        { name: "Microservices", icon: null },
-        { name: "Hibernate", icon: <SiHibernate className="text-[#59666C]" /> },
-        { name: "JPA", icon: null },
-      ]
-    },
-    {
-      title: "Frontend",
-      icon: <Layout className="text-blue-500" size={24} />,
-      skills: [
         { name: "React", icon: <SiReact className="text-[#61DAFB]" /> },
         { name: "JavaScript", icon: <SiJavascript className="text-[#F7DF1E]" /> },
-        { name: "TypeScript", icon: <SiTypescript className="text-[#3178C6]" /> },
         { name: "Tailwind CSS", icon: <SiTailwindcss className="text-[#06B6D4]" /> },
-      ]
-    },
-    {
-      title: "Database",
-      icon: <Database className="text-purple-500" size={24} />,
-      skills: [
         { name: "MySQL", icon: <SiMysql className="text-[#4479A1]" /> },
         { name: "PostgreSQL", icon: <SiPostgresql className="text-[#4169E1]" /> },
-        { name: "MongoDB", icon: <SiMongodb className="text-[#47A248]" /> },
+        { name: "Git", icon: <SiGit className="text-[#F05032]" /> },
       ]
     },
     {
-      title: "Tools & DevOps",
-      icon: <Settings className="text-pink-500" size={24} />,
+      title: "Learning:",
       skills: [
         { name: "Docker", icon: <SiDocker className="text-[#2496ED]" /> },
         { name: "AWS", icon: <FaAws className="text-[#FF9900]" /> },
-        { name: "Git", icon: <SiGit className="text-[#F05032]" /> },
-        { name: "Maven", icon: null },
+        { name: "MongoDB", icon: <SiMongodb className="text-[#47A248]" /> },
+        { name: "TypeScript", icon: <SiTypescript className="text-[#3178C6]" /> },
+      ]
+    },
+    {
+      title: "Other skills:",
+      skills: [
         { name: "Postman", icon: <SiPostman className="text-[#FF6C37]" /> },
+        { name: "Hibernate", icon: <SiHibernate className="text-[#59666C]" /> },
+        { name: "Maven", icon: null },
       ]
     }
   ];
 
   return (
-    <Section id="skills" title="Technical Skills" subtitle="My Toolbox">
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
-        {skillCategories.map((category, categoryIdx) => (
-          <GlassCard key={categoryIdx} className="h-full" delay={categoryIdx * 0.1}>
-            <div className="flex items-center gap-4 mb-8">
-              <div className="p-3 bg-dark-accent rounded-xl">
-                {category.icon}
-              </div>
-              <h3 className="text-xl font-bold">{category.title}</h3>
-            </div>
-            
-            <div className="flex flex-wrap gap-3">
-              {category.skills.map((skill, skillIdx) => (
-                <div 
-                  key={skillIdx}
-                  className="group flex flex-col items-center justify-center p-3 rounded-2xl bg-dark-bg/50 border border-white/5 hover:border-primary-500/30 hover:bg-primary-500/5 transition-all w-[calc(50%-0.5rem)]"
+    <Section id="skills" title="Skills" subtitle="My technical expertise categorized by proficiency and current focus.">
+      <div className="max-w-5xl mx-auto space-y-20">
+        {sections.map((section, idx) => (
+          <div key={idx} className="space-y-10">
+            <h4 className="text-sm font-black uppercase tracking-[0.4em] text-black text-center md:text-left">{section.title}</h4>
+            <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-4 gap-x-12 gap-y-16">
+              {section.skills.map((skill, sIdx) => (
+                <motion.div 
+                  key={sIdx}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: sIdx * 0.05 }}
+                  className="flex flex-col items-center group cursor-default"
                 >
-                  <div className="text-2xl mb-2 group-hover:scale-110 transition-transform">
-                    {skill.icon || <div className="w-6 h-6 rounded bg-gray-700" />}
+                  <div className="text-5xl md:text-6xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                    {skill.icon || <div className="w-12 h-12 rounded bg-gray-100" />}
                   </div>
-                  <span className="text-xs text-gray-400 group-hover:text-white transition-colors">{skill.name}</span>
-                </div>
+                  <span className="text-xs font-black uppercase tracking-widest text-gray-400 group-hover:text-black transition-colors">
+                    {skill.name}
+                  </span>
+                </motion.div>
               ))}
             </div>
-          </GlassCard>
-        ))}
-      </div>
-
-      {/* Interactive Badge Cloud (Mobile) / Accent Area */}
-      <div className="mt-16 flex flex-wrap justify-center gap-4">
-        {["RESTful APIs", "Cloud Architecture", "Unit Testing", "UI/UX Design", "Performance Optimization"].map((tag, i) => (
-          <Badge key={i} className="px-4 py-2 text-sm">{tag}</Badge>
+          </div>
         ))}
       </div>
     </Section>
