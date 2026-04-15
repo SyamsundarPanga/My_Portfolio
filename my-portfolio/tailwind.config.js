@@ -27,6 +27,8 @@ export default {
         },
       },
       fontFamily: {
+        poppins: ['Poppins', 'sans-serif'],
+        inter: ['Inter', 'sans-serif'],
         raleway: ['Raleway', 'sans-serif'],
         montserrat: ['Montserrat', 'sans-serif'],
         openSans: ['Open Sans', 'sans-serif'],

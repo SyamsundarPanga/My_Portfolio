@@ -22,7 +22,7 @@ const Experience = () => {
   ];
 
   return (
-    <Section id="experience" title="Experience" subtitle="My professional timeline as an IT specialist.">
+    <Section id="experience" title="Experience" subtitle="My professional timeline as an IT specialist." className="bg-brand-gray-accent">
       <div className="max-w-4xl mx-auto space-y-24">
         {experiences.map((exp, i) => (
           <motion.div 

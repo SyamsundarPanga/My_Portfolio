@@ -8,7 +8,7 @@ import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-24 bg-white relative">
+    <section id="contact" className="py-24 bg-brand-gray-accent relative">
       <div className="container mx-auto px-6 text-center mb-20">
         <div className="boxed-header mb-12">
           CONTACT

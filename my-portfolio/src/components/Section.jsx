@@ -12,7 +12,7 @@ const Section = ({ id, title, subtitle, children, className = "", container = tr
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                className="boxed-header bg-white mb-6"
+                className="boxed-header bg-brand-gray-accent mb-6"
               >
                 {title}
               </motion.div>

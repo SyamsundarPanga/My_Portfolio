@@ -6,7 +6,7 @@ import { Code2, Layout, Settings } from 'lucide-react';
 
 const About = () => {
   return (
-    <section id="about" className="py-24 bg-white relative overflow-hidden">
+    <section id="about" className="py-24 bg-brand-gray-accent relative overflow-hidden">
       <div className="container mx-auto px-6 text-center mb-20">
         <div className="boxed-header mb-12">
           ABOUT ME
