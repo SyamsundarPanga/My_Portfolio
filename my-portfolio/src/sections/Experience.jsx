@@ -23,33 +23,33 @@ const Experience = () => {
 
   return (
     <Section id="experience" title="Experience" subtitle="My professional timeline as an IT specialist." className="bg-brand-gray-accent">
-      <div className="max-w-4xl mx-auto space-y-24">
+      <div className="max-w-4xl mx-auto space-y-16 md:space-y-24">
         {experiences.map((exp, i) => (
           <motion.div 
             key={i}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start relative"
+            className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-start relative px-4"
           >
-            {/* Year indication as seen in vertical layouts */}
-            <div className="md:col-span-3">
-              <span className="text-sm font-black uppercase tracking-[0.4em] text-gray-400">{exp.timeline}</span>
+            {/* Year indication */}
+            <div className="md:col-span-3 pt-2">
+              <span className="text-[12px] md:text-sm font-black uppercase tracking-[0.3em] md:tracking-[0.4em] text-gray-400">{exp.timeline}</span>
             </div>
 
-            <div className="md:col-span-9 border-l-2 border-black pl-8 pb-8">
-              <h3 className="text-2xl font-black uppercase tracking-widest text-black mb-1">{exp.company}</h3>
-              <p className="text-sm font-black uppercase tracking-[0.2em] text-gray-500 mb-6">{exp.role}</p>
+            <div className="md:col-span-9 border-l-2 border-black pl-6 md:pl-8 pb-4 md:pb-8">
+              <h3 className="text-xl md:text-2xl font-black uppercase tracking-widest text-black mb-1">{exp.company}</h3>
+              <p className="text-[12px] md:text-sm font-black uppercase tracking-[0.2em] text-gray-500 mb-4 md:mb-6">{exp.role}</p>
               
-              <p className="text-gray-600 text-lg leading-relaxed mb-8 font-medium">
+              <p className="text-gray-600 text-[15px] md:text-lg leading-relaxed mb-6 md:mb-8 font-medium">
                 {exp.description}
               </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
                 {exp.achievements.map((achievement, idx) => (
                   <div key={idx} className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-black flex-shrink-0" />
-                    <span className="text-xs font-black uppercase tracking-widest text-gray-500">{achievement}</span>
+                    <div className="w-1.5 h-1.5 bg-black flex-shrink-0" />
+                    <span className="text-[10px] md:text-xs font-black uppercase tracking-widest text-gray-500">{achievement}</span>
                   </div>
                 ))}
               </div>

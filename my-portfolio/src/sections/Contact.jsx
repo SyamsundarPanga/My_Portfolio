@@ -8,84 +8,80 @@ import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-24 bg-brand-gray-accent relative">
-      <div className="container mx-auto px-6 text-center mb-20">
-        <div className="boxed-header mb-12">
-          CONTACT
-        </div>
-        
-        <p className="font-open-sans font-normal text-[15px] leading-relaxed text-brand-black max-w-3xl mx-auto text-center">
-          Nulla in velit a metus rhoncus tempus. Nulla congue nulla vel sem varius finibus. 
-          Sed ornare sit amet lorem sed viverra. In vel urna quis libero viverra facilisis ut ac est.
+    <Section id="contact" title="Contact" className="bg-brand-gray-accent">
+      <div className="max-w-3xl mx-auto mb-16 px-4">
+        <p className="font-open-sans font-normal text-[14px] md:text-[15px] leading-relaxed text-brand-black text-center opacity-80">
+          Interested in working together or have a question? Feel free to reach out. 
+          I typically respond within 24 hours to all enterprise and freelance inquiries.
         </p>
       </div>
 
-      <div className="container mx-auto px-6 max-w-3xl mb-32">
-        <form className="space-y-12" onSubmit={(e) => e.preventDefault()}>
-          <div className="space-y-12">
+      <div className="max-w-3xl mx-auto mb-24 px-4">
+        <form className="space-y-8 md:space-y-12" onSubmit={(e) => e.preventDefault()}>
+          <div className="space-y-8 md:space-y-12">
             {/* NAME */}
-            <div className="flex items-start gap-4">
-              <div className="w-[5px] h-[48px] bg-brand-black shrink-0" />
-              <div className="flex-1 border-b-[5px] border-brand-black pb-2">
+            <div className="flex items-start gap-3 md:gap-4">
+              <div className="w-[3px] md:w-[5px] h-[40px] md:h-[48px] bg-brand-black shrink-0" />
+              <div className="flex-1 border-b-[3px] md:border-b-[5px] border-brand-black pb-1 md:pb-2">
                 <input 
                   type="text" 
                   placeholder="ENTER YOUR NAME*" 
-                  className="contact-input"
+                  className="contact-input text-[12px] md:text-sm"
                 />
               </div>
             </div>
 
             {/* EMAIL */}
-            <div className="flex items-start gap-4">
-              <div className="w-[5px] h-[48px] bg-brand-black shrink-0" />
-              <div className="flex-1 border-b-[5px] border-brand-black pb-2">
+            <div className="flex items-start gap-3 md:gap-4">
+              <div className="w-[3px] md:w-[5px] h-[40px] md:h-[48px] bg-brand-black shrink-0" />
+              <div className="flex-1 border-b-[3px] md:border-b-[5px] border-brand-black pb-1 md:pb-2">
                 <input 
                   type="email" 
                   placeholder="ENTER YOUR EMAIL*" 
-                  className="contact-input"
+                  className="contact-input text-[12px] md:text-sm"
                 />
               </div>
             </div>
 
             {/* PHONE */}
-            <div className="flex items-start gap-4">
-              <div className="w-[5px] h-[48px] bg-brand-black shrink-0" />
-              <div className="flex-1 border-b-[5px] border-brand-black pb-2">
+            <div className="flex items-start gap-3 md:gap-4">
+              <div className="w-[3px] md:w-[5px] h-[40px] md:h-[48px] bg-brand-black shrink-0" />
+              <div className="flex-1 border-b-[3px] md:border-b-[5px] border-brand-black pb-1 md:pb-2">
                 <input 
                   type="text" 
                   placeholder="PHONE NUMBER" 
-                  className="contact-input"
+                  className="contact-input text-[12px] md:text-sm"
                 />
               </div>
             </div>
 
             {/* MESSAGE */}
-            <div className="flex items-start gap-4">
-              <div className="w-[5px] h-[184px] bg-brand-black shrink-0" />
-              <div className="flex-1 border-b-[5px] border-brand-black pb-2">
+            <div className="flex items-start gap-3 md:gap-4">
+              <div className="w-[3px] md:w-[5px] h-[120px] md:h-[184px] bg-brand-black shrink-0" />
+              <div className="flex-1 border-b-[3px] md:border-b-[5px] border-brand-black pb-1 md:pb-2">
                 <textarea 
-                  rows="6" 
+                  rows="4" md:rows="6" 
                   placeholder="YOUR MESSAGE*" 
-                  className="contact-input resize-none h-[150px]"
+                  className="contact-input resize-none h-[100px] md:h-[150px] text-[12px] md:text-sm"
                 />
               </div>
             </div>
           </div>
 
-          <div className="flex justify-center pt-12">
-            <button className="flex items-center gap-12 group cursor-pointer border-none bg-transparent">
-              <div className="w-[3px] h-12 bg-brand-black" />
-              <span className="font-montserrat font-bold text-[16px] tracking-[0.1em] text-brand-black">SUBMIT</span>
-              <div className="w-[3px] h-12 bg-brand-black" />
+          <div className="flex justify-center pt-8 md:pt-12">
+            <button className="flex items-center gap-6 md:gap-12 group cursor-pointer border-none bg-transparent">
+              <div className="w-[2px] md:w-[3px] h-8 md:h-12 bg-brand-black" />
+              <span className="font-montserrat font-bold text-[14px] md:text-[16px] tracking-[0.1em] text-brand-black">SUBMIT</span>
+              <div className="w-[2px] md:w-[3px] h-8 md:h-12 bg-brand-black" />
             </button>
           </div>
         </form>
       </div>
 
-      <div className="flex justify-center mb-8 opacity-20">
-        <div className="w-40 h-[12px] border-y-2 border-brand-black" />
+      <div className="flex justify-center opacity-20">
+        <div className="w-24 md:w-40 h-[10px] md:h-[12px] border-y-2 border-brand-black" />
       </div>
-    </section>
+    </Section>
   );
 };
 

@@ -29,16 +29,16 @@ const Hero = () => {
               Hi, I am
             </motion.p>
 
-            <h1 className="font-poppins font-bold text-[55px] md:text-[75px] leading-[1.1] mb-4 text-brand-black tracking-tight">
+            <h1 className="font-poppins font-bold text-[40px] sm:text-[55px] md:text-[75px] leading-[1.1] mb-4 text-brand-black tracking-tight">
               Panga<br />
               Syamsundar Rao
             </h1>
 
-            <p className="font-inter font-semibold text-[18px] md:text-[22px] text-brand-gray-text mb-4 uppercase tracking-[0.1em]">
+            <p className="font-inter font-semibold text-[14px] sm:text-[18px] md:text-[22px] text-brand-gray-text mb-4 uppercase tracking-[0.1em]">
               Frontend Developer / Full Stack Java Specialist
             </p>
 
-            <div className="flex items-center justify-center lg:justify-start gap-8">
+            <div className="flex items-center justify-center lg:justify-start gap-4 md:gap-8">
               <a
                 href="https://github.com"
                 target="_blank"
@@ -72,7 +72,7 @@ const Hero = () => {
               transition={{ duration: 1 }}
               className="relative h-full flex items-end"
             >
-              <div className="relative aspect-[3/4] h-[400px] md:h-[650px] lg:h-[800px]">
+              <div className="relative aspect-[3/4] h-[300px] sm:h-[450px] md:h-[650px] lg:h-[800px]">
                 <img
                   src="/SyamIMG.png"
                   alt="Panga Syamsundar Rao"
@@ -83,7 +83,7 @@ const Hero = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/20 to-transparent pointer-events-none" />
               </div>
 
-              <div className="absolute bottom-20 -left-10 text-[14px] font-inter text-white max-w-[140px] leading-tight text-justify bg-brand-black/40 p-3 backdrop-blur-md border border-white/10">
+              <div className="absolute bottom-10 md:bottom-20 -left-6 md:-left-10 text-[10px] md:text-[14px] font-inter text-white max-w-[100px] md:max-w-[140px] leading-tight text-justify bg-brand-black/40 p-2 md:p-3 backdrop-blur-md border border-white/10">
                 "Building robust backends and elegant frontends."
               </div>
             </motion.div>
@@ -96,10 +96,10 @@ const Hero = () => {
       <div className="bg-brand-black py-4 text-white overflow-hidden relative z-20">
         <div className="container mx-auto px-6 relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-12">
           <div className="max-w-3xl">
-            <h3 className="font-poppins font-bold text-[28px] uppercase tracking-[0.2em] mb-6 border-l-4 border-white pl-6">
+            <h3 className="font-poppins font-bold text-[20px] md:text-[28px] uppercase tracking-[0.2em] mb-4 md:mb-6 border-l-4 border-white pl-4 md:pl-6">
               Tech Excellence
             </h3>
-            <p className="font-inter font-light text-[15px] leading-relaxed text-justify opacity-70">
+            <p className="font-inter font-light text-[12px] md:text-[15px] leading-relaxed text-justify opacity-70">
               Specializing in enterprise Java development, Spring Boot microservices,
               and high-performance React applications. Delivering scalable solutions
               with modern engineering practices and pixel-perfect design aesthetics.

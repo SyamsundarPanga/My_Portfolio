@@ -76,7 +76,7 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden glass border-b overflow-hidden"
+            className="md:hidden bg-brand-gray-accent/95 backdrop-blur-md border-b border-black/10 overflow-hidden"
           >
             <div className="flex flex-col p-6 gap-4">
               {navLinks.map((link) => (

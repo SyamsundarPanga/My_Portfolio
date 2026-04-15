@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 
 const Section = ({ id, title, subtitle, children, className = "", container = true }) => {
   return (
-    <section id={id} className={`py-24 relative overflow-hidden ${className}`}>
-      <div className={`${container ? 'container mx-auto px-6' : ''}`}>
+    <section id={id} className={`section-padding relative overflow-hidden ${className}`}>
+      <div className={`${container ? 'max-w-7xl mx-auto' : ''}`}>
         {(title || subtitle) && (
           <div className="mb-20 text-center flex flex-col items-center">
             {title && (
