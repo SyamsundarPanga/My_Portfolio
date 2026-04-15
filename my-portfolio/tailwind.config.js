@@ -7,6 +7,11 @@ export default {
   theme: {
     extend: {
       colors: {
+        'brand-black': '#0B0B0B',
+        'brand-gray-accent': '#D7D7D7',
+        'brand-gray-text': '#919191',
+        'brand-gray-light': '#C4C4C4',
+        'brand-gray-dark': '#1A1A1A',
         primary: {
           50: '#f6f6f6',
           100: '#e7e7e7',
@@ -20,48 +25,18 @@ export default {
           900: '#3d3d3d',
           950: '#000000',
         },
-        'dark-bg': '#ffffff',
-        'dark-card': '#fcfcfc',
-        'dark-accent': '#f4f4f4',
+      },
+      fontFamily: {
+        raleway: ['Raleway', 'sans-serif'],
+        montserrat: ['Montserrat', 'sans-serif'],
+        openSans: ['Open Sans', 'sans-serif'],
+        nunito: ['Nunito', 'sans-serif'],
+        roboto: ['Roboto', 'sans-serif'],
       },
       animation: {
-        'gradient-x': 'gradient-x 15s ease infinite',
-        'gradient-y': 'gradient-y 15s ease infinite',
-        'gradient-xy': 'gradient-xy 15s ease infinite',
         'float': 'float 6s ease-in-out infinite',
-        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       },
       keyframes: {
-        'gradient-y': {
-          '0%, 100%': {
-            'background-size': '400% 400%',
-            'background-position': 'center top'
-          },
-          '50%': {
-            'background-size': '200% 200%',
-            'background-position': 'center bottom'
-          }
-        },
-        'gradient-x': {
-          '0%, 100%': {
-            'background-size': '200% 200%',
-            'background-position': 'left center'
-          },
-          '50%': {
-            'background-size': '200% 200%',
-            'background-position': 'right center'
-          }
-        },
-        'gradient-xy': {
-          '0%, 100%': {
-            'background-size': '400% 400%',
-            'background-position': 'left center'
-          },
-          '50%': {
-            'background-size': '200% 200%',
-            'background-position': 'right center'
-          }
-        },
         'float': {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-20px)' },

@@ -8,68 +8,84 @@ import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
 const Contact = () => {
   return (
-    <Section id="contact" title="Contact" subtitle="Let's build something exceptional together. I'm currently available for full-time roles and freelance partnerships.">
-      <div className="max-w-3xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mb-16 text-center"
-        >
-          <div className="flex justify-center gap-8 mb-12">
-            <a href="mailto:syamsundarpanga@gmail.com" className="text-sm font-black uppercase tracking-widest border-b-2 border-black pb-1 hover:text-gray-500 hover:border-gray-500 transition-all">Email Me</a>
-            <a href="#" className="text-sm font-black uppercase tracking-widest border-b-2 border-black pb-1 hover:text-gray-500 hover:border-gray-500 transition-all">LinkedIn</a>
-          </div>
-        </motion.div>
+    <section id="contact" className="py-24 bg-white relative">
+      <div className="container mx-auto px-6 text-center mb-20">
+        <div className="boxed-header mb-12">
+          CONTACT
+        </div>
+        
+        <p className="font-open-sans font-normal text-[15px] leading-relaxed text-brand-black max-w-3xl mx-auto text-center">
+          Nulla in velit a metus rhoncus tempus. Nulla congue nulla vel sem varius finibus. 
+          Sed ornare sit amet lorem sed viverra. In vel urna quis libero viverra facilisis ut ac est.
+        </p>
+      </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          <form className="space-y-12" onSubmit={(e) => e.preventDefault()}>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-              <div className="relative group">
+      <div className="container mx-auto px-6 max-w-3xl mb-32">
+        <form className="space-y-12" onSubmit={(e) => e.preventDefault()}>
+          <div className="space-y-12">
+            {/* NAME */}
+            <div className="flex items-start gap-4">
+              <div className="w-[5px] h-[48px] bg-brand-black shrink-0" />
+              <div className="flex-1 border-b-[5px] border-brand-black pb-2">
                 <input 
                   type="text" 
-                  placeholder="Your Name" 
-                  className="w-full bg-transparent border-b-2 border-gray-200 py-4 focus:outline-none focus:border-black transition-colors font-bold text-black placeholder:text-gray-300"
+                  placeholder="ENTER YOUR NAME*" 
+                  className="contact-input"
                 />
               </div>
-              <div className="relative group">
+            </div>
+
+            {/* EMAIL */}
+            <div className="flex items-start gap-4">
+              <div className="w-[5px] h-[48px] bg-brand-black shrink-0" />
+              <div className="flex-1 border-b-[5px] border-brand-black pb-2">
                 <input 
                   type="email" 
-                  placeholder="Your Email" 
-                  className="w-full bg-transparent border-b-2 border-gray-200 py-4 focus:outline-none focus:border-black transition-colors font-bold text-black placeholder:text-gray-300"
+                  placeholder="ENTER YOUR EMAIL*" 
+                  className="contact-input"
                 />
               </div>
             </div>
 
-            <div className="relative group">
-              <input 
-                type="text" 
-                placeholder="Subject" 
-                className="w-full bg-transparent border-b-2 border-gray-200 py-4 focus:outline-none focus:border-black transition-colors font-bold text-black placeholder:text-gray-300"
-              />
+            {/* PHONE */}
+            <div className="flex items-start gap-4">
+              <div className="w-[5px] h-[48px] bg-brand-black shrink-0" />
+              <div className="flex-1 border-b-[5px] border-brand-black pb-2">
+                <input 
+                  type="text" 
+                  placeholder="PHONE NUMBER" 
+                  className="contact-input"
+                />
+              </div>
             </div>
 
-            <div className="relative group">
-              <textarea 
-                rows="4" 
-                placeholder="Tell me about your project..." 
-                className="w-full bg-transparent border-b-2 border-gray-200 py-4 focus:outline-none focus:border-black transition-colors font-bold text-black placeholder:text-gray-300 resize-none"
-              />
+            {/* MESSAGE */}
+            <div className="flex items-start gap-4">
+              <div className="w-[5px] h-[184px] bg-brand-black shrink-0" />
+              <div className="flex-1 border-b-[5px] border-brand-black pb-2">
+                <textarea 
+                  rows="6" 
+                  placeholder="YOUR MESSAGE*" 
+                  className="contact-input resize-none h-[150px]"
+                />
+              </div>
             </div>
+          </div>
 
-            <div className="flex justify-center pt-8">
-              <Button className="px-16 py-5 text-xl font-black uppercase tracking-widest">
-                Send Message <Send size={20} />
-              </Button>
-            </div>
-          </form>
-        </motion.div>
+          <div className="flex justify-center pt-12">
+            <button className="flex items-center gap-12 group cursor-pointer border-none bg-transparent">
+              <div className="w-[3px] h-12 bg-brand-black" />
+              <span className="font-montserrat font-bold text-[16px] tracking-[0.1em] text-brand-black">SUBMIT</span>
+              <div className="w-[3px] h-12 bg-brand-black" />
+            </button>
+          </div>
+        </form>
       </div>
-    </Section>
+
+      <div className="flex justify-center mb-8 opacity-20">
+        <div className="w-40 h-[12px] border-y-2 border-brand-black" />
+      </div>
+    </section>
   );
 };
 

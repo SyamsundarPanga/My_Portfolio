@@ -2,67 +2,77 @@ import React from 'react';
 import Section from '../components/Section';
 import GlassCard from '../components/GlassCard';
 import { motion } from 'framer-motion';
-import { User, Code2, Rocket, Heart } from 'lucide-react';
+import { Code2, Layout, Settings } from 'lucide-react';
 
 const About = () => {
   return (
-    <Section 
-      id="about" 
-      title="About Me" 
-      subtitle="The IT specialist with over a year of experience in enterprise Java development." 
-      className="bg-gray-50"
-    >
-      <div className="max-w-4xl mx-auto">
-        <div className="flex flex-col md:flex-row gap-12 items-start mb-20">
-          <motion.div 
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="md:w-1/3"
-          >
-            <div className="w-full aspect-square bg-white border-2 border-black p-2">
-              <div className="w-full h-full bg-black flex items-center justify-center p-8 text-white text-center">
-                <p className="text-xl font-black uppercase tracking-widest">Code Passion Design</p>
+    <section id="about" className="py-24 bg-white relative overflow-hidden">
+      <div className="container mx-auto px-6 text-center mb-20">
+        <div className="boxed-header mb-12">
+          ABOUT ME
+        </div>
+        
+        <div className="max-w-3xl mx-auto mb-16">
+          <p className="font-open-sans font-normal text-[15px] leading-relaxed text-brand-black text-center">
+            Panga Syamsundar Rao is a seasoned IT specialist with a focus on enterprise-grade web solutions. 
+            Designing and developing complex systems with a minimalist aesthetic and maximum performance.
+          </p>
+        </div>
+
+        {/* separatorBlack 1 style */}
+        <div className="flex justify-center mb-20 opacity-20">
+          <div className="w-40 h-[12px] border-y-2 border-brand-black" />
+        </div>
+      </div>
+
+      <div className="container mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 max-w-6xl mx-auto">
+          {/* SERVICE 1: DESIGN */}
+          <div className="space-y-6">
+            <div className="flex items-center gap-4">
+              <div className="square-icon p-3">
+                <Layout size={30} className="text-brand-black" />
               </div>
+              <h4 className="font-montserrat font-bold text-[22px] tracking-widest text-brand-black">DESIGN</h4>
             </div>
-          </motion.div>
-
-          <motion.div 
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="md:w-2/3"
-          >
-            <p className="text-gray-600 text-lg leading-relaxed font-bold mb-6 italic">
-              "I specialize in building modular, high-performance backends and clean, responsive interfaces that solve real-world problems."
-            </p>
-            <p className="text-gray-500 text-base leading-relaxed mb-6">
-              Currently working at <span className="text-black font-black">BluePal</span>, I focus on the Java ecosystem, Spring Boot, and modern React architectures. My goal is to create software that is not just functional, but also highly scalable and maintainable.
-            </p>
-          </motion.div>
-        </div>
-
-        {/* Diagonal Separator as seen in screenshot placeholders */}
-        <div className="flex justify-center mb-20">
-          <div className="w-40 h-[2px] bg-black opacity-10" />
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-          <div>
-            <h4 className="text-sm font-black uppercase tracking-[0.3em] mb-4 text-black border-l-4 border-black pl-4">Design</h4>
-            <p className="text-gray-500 text-sm leading-relaxed">
-              I believe in clean, functional aesthetics. While I focus on backend, I ensure my frontends are intuitive, responsive, and follow modern UI/UX principles.
+            <p className="font-open-sans font-light text-[14px] leading-relaxed text-justify text-brand-black">
+              I can design the site based on your needs and suggestions. I can also design the site from scratch and consult you during the job. I focus on clean, modern, and user-centric interfaces.
             </p>
           </div>
-          <div>
-            <h4 className="text-sm font-black uppercase tracking-[0.3em] mb-4 text-black border-l-4 border-black pl-4">Development</h4>
-            <p className="text-gray-500 text-sm leading-relaxed">
-              My core strength lies in Java & Spring Boot. I build RESTful services, manage databases (MySQL/PostgreSQL), and optimize application performance.
+
+          {/* SERVICE 2: DEVELOPMENT */}
+          <div className="space-y-6">
+            <div className="flex items-center gap-4">
+              <div className="square-icon p-3">
+                <Code2 size={30} className="text-brand-black" />
+              </div>
+              <h4 className="font-montserrat font-bold text-[22px] tracking-widest text-brand-black">DEVELOPMENT</h4>
+            </div>
+            <p className="font-open-sans font-light text-[14px] leading-relaxed text-justify text-brand-black">
+              Using modern technologies like React, Spring Boot, and robust databases, I build scalable applications that perform reliably under heavy load. Every line of code is optimized for maintainability.
+            </p>
+          </div>
+
+          {/* SERVICE 3: MAINTENANCE */}
+          <div className="space-y-6">
+            <div className="flex items-center gap-4">
+              <div className="square-icon p-3">
+                <Settings size={30} className="text-brand-black" />
+              </div>
+              <h4 className="font-montserrat font-bold text-[22px] tracking-widest text-brand-black">MAINTENANCE</h4>
+            </div>
+            <p className="font-open-sans font-light text-[14px] leading-relaxed text-justify text-brand-black">
+              Post-launch support is critical. I provide comprehensive maintenance, performance audits, and security updates to ensure your digital products remain sharp and effective long after the first commit.
             </p>
           </div>
         </div>
       </div>
-    </Section>
+      
+      {/* separatorBlack 2 style bottom */}
+      <div className="container mx-auto px-6 flex justify-center mt-32 opacity-10">
+        <div className="w-40 h-[12px] border-y-2 border-brand-black" />
+      </div>
+    </section>
   );
 };
 

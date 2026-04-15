@@ -1,22 +1,47 @@
+import { ChevronsRight } from 'lucide-react';
+import { FaFacebookF, FaLinkedin, FaInstagram } from 'react-icons/fa';
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
-  return (
-    <footer className="py-20 bg-black text-white border-t border-white/5 relative overflow-hidden">
-      <div className="container mx-auto px-6 text-center">
-        <a href="#" className="text-3xl font-black tracking-tighter mb-8 block uppercase">
-          Syam<span className="text-gray-500">Rao</span>
-        </a>
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
-        <div className="flex justify-center gap-8 mb-12">
-          <a href="#" className="text-[10px] font-black uppercase tracking-[0.4em] text-gray-400 hover:text-white transition-all">GitHub</a>
-          <a href="#" className="text-[10px] font-black uppercase tracking-[0.4em] text-gray-400 hover:text-white transition-all">LinkedIn</a>
-          <a href="#" className="text-[10px] font-black uppercase tracking-[0.4em] text-gray-400 hover:text-white transition-all">Twitter</a>
+  return (
+    <footer className="py-20 bg-brand-gray-dark text-white relative">
+      <div className="container mx-auto px-6 flex flex-col items-center gap-12">
+        {/* BACK TO TOP */}
+        <button 
+          onClick={scrollToTop}
+          className="flex flex-col items-center gap-4 group"
+        >
+          <div className="w-8 h-8 flex items-center justify-center transform -rotate-90">
+             <ChevronsRight size={20} className="text-white group-hover:-translate-y-1 transition-transform" />
+          </div>
+          <span className="font-montserrat font-bold text-[15px] tracking-[0.18em] uppercase">BACK TO TOP</span>
+        </button>
+
+        {/* SOCIAL ICONS */}
+        <div className="flex gap-8">
+          <a href="#" className="w-10 h-10 border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors">
+            <FaFacebookF size={18} />
+          </a>
+          <a href="#" className="w-10 h-10 border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors">
+            <FaLinkedin size={18} />
+          </a>
+          <a href="#" className="w-10 h-10 border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors">
+            <FaInstagram size={18} />
+          </a>
         </div>
 
-        <p className="text-[8px] font-black uppercase tracking-[0.5em] text-gray-600">
-          © {currentYear} Panga Syamsundar Rao • Based in Visakhapatnam, India
-        </p>
+        {/* COPYRIGHT */}
+        <div className="text-center pt-8 border-t border-white/5 w-full max-w-sm">
+          <p className="font-nunito font-bold text-[18px] opacity-80">
+            © {currentYear} Panga Syamsundar Rao. <br />
+            All Rights Reserved.
+          </p>
+        </div>
       </div>
     </footer>
   );

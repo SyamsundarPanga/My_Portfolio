@@ -7,60 +7,57 @@
     @apply scroll-smooth;
   }
   body {
-    @apply bg-white text-black antialiased selection:bg-black selection:text-white overflow-x-hidden transition-colors duration-300;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    @apply bg-white text-brand-black antialiased selection:bg-brand-black selection:text-white overflow-x-hidden;
+    font-family: 'Open Sans', sans-serif;
   }
 }
 
 @layer utilities {
-  .glass {
-    @apply bg-white/70 backdrop-blur-xl border border-black/5 shadow-xl;
-  }
-  .glass-dark {
-    @apply bg-gray-100/50 backdrop-blur-2xl border border-black/5 shadow-inner;
-  }
-  .glass-card {
-    @apply bg-white backdrop-blur-lg border border-gray-200 hover:border-black transition-all duration-300;
-  }
-  .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-black to-gray-500;
-  }
-  .bg-gradient-mesh {
-    background-image: radial-gradient(at 0% 0%, hsla(0,0%,95%,1) 0, transparent 50%), 
-                      radial-gradient(at 50% 0%, hsla(0,0%,90%,1) 0, transparent 50%), 
-                      radial-gradient(at 100% 0%, hsla(0,0%,98%,1) 0, transparent 50%);
-  }
+  .font-raleway { font-family: 'Raleway', sans-serif; }
+  .font-montserrat { font-family: 'Montserrat', sans-serif; }
+  .font-open-sans { font-family: 'Open Sans', sans-serif; }
+  .font-nunito { font-family: 'Nunito', sans-serif; }
+  .font-roboto { font-family: 'Roboto', sans-serif; }
+
   .boxed-header {
-    @apply inline-block px-12 py-3 border-4 border-black font-black uppercase tracking-[0.2em] text-xl md:text-2xl;
+    @apply inline-block px-12 py-4 border-8 border-brand-black font-montserrat font-bold uppercase tracking-[0.35em] text-2xl md:text-3xl transition-all duration-300;
   }
+  
+  .boxed-header-light {
+    @apply inline-block px-12 py-4 border-8 border-white font-montserrat font-bold uppercase tracking-[0.35em] text-2xl md:text-3xl text-white transition-all duration-300;
+  }
+
   .diagonal-split {
     @apply relative overflow-hidden;
     background: #000;
   }
+
   .split-left {
-    @apply absolute inset-0 bg-[#D9D9D9];
-    clip-path: polygon(0 0, 85% 0, 70% 100%, 0 100%);
+    @apply absolute inset-0 bg-brand-gray-accent;
+    clip-path: polygon(0 0, 45% 0, 30% 100%, 0 100%);
   }
+
   @media (max-width: 1024px) {
     .split-left {
       clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
     }
   }
-  .square-icon {
-    @apply w-10 h-10 bg-[#BCBCBC] shadow-[4px_4px_10px_rgba(0,0,0,0.1),inset_-2px_-2px_5px_rgba(0,0,0,0.05),inset_2px_2px_5px_rgba(255,255,255,0.1)] 
-           flex items-center justify-center text-black/60 hover:text-black transition-all duration-300;
-  }
-}
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 10px;
-}
-::-webkit-scrollbar-track {
-  @apply bg-dark-bg;
-}
-::-webkit-scrollbar-thumb {
-  @apply bg-dark-accent/50 rounded-full border-2 border-dark-bg hover:bg-primary-500/50 transition-all;
+  .square-icon {
+    @apply w-[61px] h-[56px] bg-brand-gray-light shadow-[0px_4px_4px_rgba(0,0,0,0.25)] flex items-center justify-center text-brand-black hover:scale-110 transition-all duration-300;
+  }
+
+  .line-field-vertical {
+    @apply w-[5px] bg-brand-black transition-all duration-300;
+  }
+
+  .contact-input {
+    @apply w-full bg-transparent border-none py-2 focus:outline-none font-montserrat font-bold text-sm tracking-widest placeholder:text-brand-gray-text;
+  }
+
+  .nav-btn {
+    @apply px-10 py-3 rounded-[30px] bg-white border-4 border-white font-montserrat font-bold text-[15px] text-brand-black hover:bg-brand-black hover:text-white transition-all duration-300;
+  }
 }
 
 .reveal-on-scroll {

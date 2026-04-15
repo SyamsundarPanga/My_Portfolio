@@ -25,52 +25,44 @@ const Navbar = () => {
 
   return (
     <nav 
-      className="fixed top-0 left-0 right-0 z-50 py-10 bg-transparent transition-all duration-300"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-brand-black h-[66px]' : 'bg-transparent py-6'}`}
     >
-      <div className="container mx-auto px-6 flex items-center justify-between">
+      <div className="container mx-auto px-6 h-full flex items-center justify-between">
         <motion.a 
           href="#"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="text-3xl font-black tracking-tighter text-black uppercase flex items-center gap-2"
+          className="flex items-center"
         >
-          {/* Minimalist Grid-style Logo as seen in screenshot */}
-          <div className="w-10 h-10 border-4 border-black flex items-center justify-center font-black text-xl">
-            SR
+          {/* logo 1 style */}
+          <div className="w-[60px] h-[50px] flex items-center justify-center font-montserrat font-bold text-white tracking-widest text-2xl">
+            S<span className="text-brand-gray-light">R</span>
           </div>
         </motion.a>
 
-        {/* Desktop Links - Match screenshot positioning */}
-        <div className="hidden md:flex items-center gap-12">
-          {navLinks.slice(0, 3).map((link, i) => (
-            <motion.a
-              key={link.name}
-              href={link.href}
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.1 }}
-              className="text-xs font-bold text-white hover:text-gray-300 transition-colors"
-            >
-              {link.name}
-            </motion.a>
-          ))}
+        {/* Desktop Links */}
+        <div className="hidden md:flex items-center gap-16">
+          <a href="#about" className="font-montserrat font-bold text-[17px] text-white hover:text-brand-gray-light transition-colors">About me</a>
+          <a href="#skills" className="font-montserrat font-bold text-[17px] text-white hover:text-brand-gray-light transition-colors">Skills</a>
+          <a href="#projects" className="font-montserrat font-bold text-[17px] text-white hover:text-brand-gray-light transition-colors">Portfolio</a>
+          
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
+            transition={{ delay: 0.3 }}
           >
             <a 
               href="#contact" 
-              className="px-8 py-2.5 rounded-full bg-white text-black hover:bg-gray-200 transition-all text-xs font-black uppercase tracking-widest shadow-lg"
+              className="nav-btn"
             >
-              Contact Me
+              CONTACT ME
             </a>
           </motion.div>
         </div>
 
         {/* Mobile Toggle */}
         <button 
-          className="md:hidden text-gray-800 hover:text-black"
+          className="md:hidden text-white"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}

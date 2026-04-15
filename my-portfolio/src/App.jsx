@@ -31,28 +31,19 @@ function App() {
   }, []);
 
   return (
-    <div className="relative overflow-x-hidden">
-      {/* Global Background Decorations */}
-      <div className="fixed inset-0 -z-50 bg-white">
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-mesh opacity-50" />
-      </div>
-
+    <div className="relative overflow-x-hidden min-h-screen bg-white">
       <Navbar />
       
       <main>
         <Hero />
-        <div className="space-y-0">
-          <About />
-          <Skills />
-          <Experience />
-          <Projects />
-          <Contact />
-        </div>
+        <About />
+        <Skills />
+        <Experience />
+        <Projects />
+        <Contact />
       </main>
 
       <Footer />
-
-      {/* Custom Cursor Decoration (Optional - can be added later) */}
     </div>
   );
 }
