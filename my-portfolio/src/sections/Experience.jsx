@@ -8,15 +8,17 @@ import { Briefcase, Calendar, MapPin } from 'lucide-react';
 const Experience = () => {
   const experiences = [
     {
-      company: "BluePal",
-      role: "Full Stack Developer",
+      company: "BluePal, Hyderabad",
+      role: "Full Stack Java Developer",
       timeline: "Jan 2025 – Present",
-      description: "Architecting enterprise Java backends and modern React interfaces with a focus on high-performance systems and modularity.",
+      description: "Building scalable full-stack web applications and delivering high-performance systems integrated with secure backend logic.",
       achievements: [
-        "API Performance Optimization (30%+ improvement)",
-        "Microservices Architecture Implementation",
-        "React & Tailwind CSS Frontend Modernization",
-        "Docker-based Deployment Orchestration"
+        "Scalable Spring Boot & React Applications",
+        "Secure REST APIs with Spring Security & JWT",
+        "Reusable & Responsive UI Components",
+        "Frontend/Backend Integration & Optimization",
+        "Application Debugging & System Enhancement",
+        "Deployment & Production Maintenance Support"
       ]
     }
   ];

@@ -8,7 +8,6 @@ import { ExternalLink, Star } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
 
 const Projects = () => {
-  const [filter, setFilter] = React.useState('ALL');
   
   const projects = [
     {
@@ -33,15 +32,49 @@ const Projects = () => {
       link: "#"
     },
     {
-      title: "Real-Time Chat",
+      title: "E-Commerce Marketplace",
       category: "CODED",
-      desc: "Scalable messaging using WebSockets.",
-      image: "https://images.unsplash.com/photo-1611606063065-ee7946f0787a?q=80&w=2070&auto=format&fit=crop",
+      desc: "Full-featured platform with product listings, cart, and auth.",
+      image: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?q=80&w=2070&auto=format&fit=crop",
+      link: "#"
+    },
+    {
+      title: "Food Delivery App",
+      category: "CODED",
+      desc: "Order management and real-time restaurant browsing.",
+      image: "https://images.unsplash.com/photo-1526367790999-0150786486a9?q=80&w=2071&auto=format&fit=crop",
+      link: "#"
+    },
+    {
+      title: "Real-Time Chat App",
+      category: "CODED",
+      desc: "Instant messaging using Java and WebSockets.",
+      image: "https://images.unsplash.com/photo-1587560699334-cc4ff634909a?q=80&w=2070&auto=format&fit=crop",
+      link: "#"
+    },
+    {
+      title: "Hospital Management",
+      category: "CODED",
+      desc: "Patient records and appointment scheduling system.",
+      image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop",
+      link: "#"
+    },
+    {
+      title: "Hotel Management",
+      category: "CODED",
+      desc: "Reservation tracking and admin control platform.",
+      image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070&auto=format&fit=crop",
+      link: "#"
+    },
+    {
+      title: "Fitness Tracker",
+      category: "CODED",
+      desc: "Activity monitoring and health metrics tracking.",
+      image: "https://images.unsplash.com/photo-1461896756263-23363327d750?q=80&w=2070&auto=format&fit=crop",
       link: "#"
     }
   ];
 
-  const filteredProjects = projects.filter(p => filter === 'ALL' || p.category === filter || p.category === 'ALL');
 
   return (
     <section id="projects" className="py-24 bg-brand-gray-dark text-white">
@@ -51,22 +84,9 @@ const Projects = () => {
         </div>
       </div>
 
-      <div className="container mx-auto px-6 max-w-4xl mb-16">
-        <div className="flex justify-center flex-wrap gap-8 font-montserrat font-semibold text-[14px] text-[#7C7C7C] border-b border-[#AAAAAA] pb-4">
-          {['ALL', 'CODED', 'DESIGNED'].map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setFilter(cat)}
-              className={`px-8 transition-colors ${filter === cat ? 'text-white border-b-2 border-white translate-y-[18px]' : 'hover:text-white'}`}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
-      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        {filteredProjects.map((project, i) => (
+        {projects.map((project, i) => (
           <motion.div
             key={i}
             initial={{ opacity: 0 }}
@@ -82,7 +102,7 @@ const Projects = () => {
             <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-8 text-center">
               <h3 className="font-montserrat font-bold text-[25px] tracking-widest mb-2">{project.title}</h3>
               <p className="font-montserrat italic font-semibold text-[10px] tracking-widest mb-6 uppercase">
-                {project.category}, designed
+                {project.category}, developed
               </p>
               
               <div className="flex gap-12 mt-4">
@@ -102,11 +122,6 @@ const Projects = () => {
         ))}
       </div>
 
-      <div className="container mx-auto px-6 text-center mt-32">
-        <p className="font-montserrat font-semibold text-[20px] tracking-widest opacity-80">
-          AND MANY MORE...
-        </p>
-      </div>
     </section>
   );
 };

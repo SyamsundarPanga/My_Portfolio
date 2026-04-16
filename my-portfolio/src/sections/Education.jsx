@@ -22,25 +22,25 @@ const Education = () => {
 
   const educationData = [
     {
-      degree: "B.Tech in Computer Science",
-      timeline: "2017 – 2021",
-      institution: "Institute of Engineering & Technology",
-      description: "Focused on algorithm design, software systems, and full-stack architectures. Developed a deep understanding of core engineering principles.",
-      specialization: "Computer Science and Software Systems"
+      degree: "Bachelor of Technology (B.Tech) in CSE",
+      timeline: "2020 – 2024",
+      institution: "CT University, Ludhiana, Punjab",
+      description: "Built an Employee Leave Management System. Gained strong foundation in software development, data structures, and web technologies. CGPA: 7.3",
+      specialization: "Certifications: Cisco (IBM), Java (Internshala)"
     },
     {
-      degree: "Intermediate (MPC)",
-      timeline: "2015 – 2017",
-      institution: "Royal Science College",
-      description: "Specialized in Mathematics, Physics, and Chemistry. Built strong analytical foundations required for advanced engineering studies.",
+      degree: "Higher Secondary Education",
+      timeline: "2018 – 2020",
+      institution: "Sri Chaitanya Junior College, Visakhapatnam, AP",
+      description: "Specialized in MPC (Mathematics, Physics, Chemistry). Built strong analytical foundations required for advanced engineering. CGPA: 8.2",
       specialization: "Junior College"
     },
     {
-      degree: "10th Class",
-      timeline: "2014 – 2015",
-      institution: "St. Xavier's International School",
-      description: "Focusing on mathematics and basic physics, graduating with top honors. Developed the initial logic and problem-solving mindset.",
-      specialization: "High Schooling Foundation"
+      degree: "Secondary Education",
+      timeline: "2017 – 2018",
+      institution: "Bradlaugh Public School, Srikakulam, AP",
+      description: "Mastered basic physics and logic. Developed the initial logic and problem-solving mindset. CGPA: 9.2",
+      specialization: "Secondary Schooling"
     }
   ];
 
