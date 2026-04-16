@@ -103,11 +103,8 @@ const Hero = () => {
                 <img
                   src="/SyamIMG.png"
                   alt="Panga Syamsundar Rao"
-                  className="w-full h-full object-contain filter drop-shadow-2xl"
+                  className="w-full h-full object-contain"
                 />
-
-                {/* Smooth blend overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/20 to-transparent pointer-events-none" />
               </div>
 
             </motion.div>
