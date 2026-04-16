@@ -42,7 +42,7 @@ const Projects = () => {
       title: "Food Delivery App",
       category: "CODED",
       desc: "Order management and real-time restaurant browsing.",
-      image: "https://images.unsplash.com/photo-1526367790999-0150786486a9?q=80&w=2071&auto=format&fit=crop",
+      image: "/projects/food-delivery.png",
       link: "#"
     },
     {
@@ -70,7 +70,7 @@ const Projects = () => {
       title: "Fitness Tracker",
       category: "CODED",
       desc: "Activity monitoring and health metrics tracking.",
-      image: "https://images.unsplash.com/photo-1461896756263-23363327d750?q=80&w=2070&auto=format&fit=crop",
+      image: "/projects/fitness-tracker.png",
       link: "#"
     }
   ];
