@@ -5,29 +5,48 @@
 @layer base {
   html {
     @apply scroll-smooth;
-    scrollbar-width: none; /* Firefox */
+    scrollbar-width: none;
+    /* Firefox */
   }
+
   html::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Edge */
+    display: none;
+    /* Chrome, Safari, Edge */
   }
+
   body {
     @apply bg-brand-gray-accent text-brand-black antialiased selection:bg-brand-black selection:text-white overflow-x-hidden;
     font-family: 'Inter', sans-serif;
-    -ms-overflow-style: none; /* IE and Edge */
+    -ms-overflow-style: none;
+    /* IE and Edge */
   }
 }
 
 @layer utilities {
-  .font-raleway { font-family: 'Raleway', sans-serif; }
-  .font-montserrat { font-family: 'Montserrat', sans-serif; }
-  .font-open-sans { font-family: 'Open Sans', sans-serif; }
-  .font-nunito { font-family: 'Nunito', sans-serif; }
-  .font-roboto { font-family: 'Roboto', sans-serif; }
+  .font-raleway {
+    font-family: 'Raleway', sans-serif;
+  }
+
+  .font-montserrat {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .font-open-sans {
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  .font-nunito {
+    font-family: 'Nunito', sans-serif;
+  }
+
+  .font-roboto {
+    font-family: 'Roboto', sans-serif;
+  }
 
   .boxed-header {
     @apply inline-block px-8 py-3 md:px-12 md:py-4 border-4 md:border-8 border-brand-black font-montserrat font-bold uppercase tracking-[0.2em] md:tracking-[0.35em] text-lg md:text-3xl transition-all duration-300;
   }
-  
+
   .boxed-header-light {
     @apply inline-block px-8 py-3 md:px-12 md:py-4 border-4 md:border-8 border-white font-montserrat font-bold uppercase tracking-[0.2em] md:tracking-[0.35em] text-lg md:text-3xl text-white transition-all duration-300;
   }
@@ -38,7 +57,7 @@
 
   .split-left {
     @apply absolute inset-0 bg-brand-gray-accent;
-    clip-path: polygon(0 0, 50% 0, 30% 100%, 0 100%);
+    clip-path: polygon(0 0, 55% 0, 35% 100%, 0 100%);
   }
 
   @media (max-width: 1024px) {

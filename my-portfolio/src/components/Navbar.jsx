@@ -6,6 +6,7 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa';
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState('');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,49 +20,48 @@ const Navbar = () => {
     { name: 'About', href: '#about' },
     { name: 'Skills', href: '#skills' },
     { name: 'Experience', href: '#experience' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Education', href: '#education' },
+    { name: 'Portfolio', href: '#projects' },
+    { name: 'Contact Me', href: '#contact' },
   ];
 
   return (
-    <nav 
+    <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-brand-black h-[66px]' : 'bg-transparent py-2'}`}
     >
       <div className="container mx-auto px-6 h-full flex items-center justify-between">
-        <motion.a 
+        <motion.a
           href="#"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           className="flex items-center"
         >
-          {/* logo 1 style */}
-          <div className="w-[60px] h-[50px] flex items-center justify-center font-montserrat font-bold text-white tracking-widest text-2xl">
-            S<span className="text-brand-gray-light">R</span>
-          </div>
+          <img
+            src="/SyamLogo.png"
+            alt="Syam Logo"
+            className="h-10 md:h-12 w-auto object-contain"
+          />
         </motion.a>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-16">
-          <a href="#about" className="font-montserrat font-bold text-[17px] text-white hover:text-brand-gray-light transition-colors">About me</a>
-          <a href="#skills" className="font-montserrat font-bold text-[17px] text-white hover:text-brand-gray-light transition-colors">Skills</a>
-          <a href="#projects" className="font-montserrat font-bold text-[17px] text-white hover:text-brand-gray-light transition-colors">Portfolio</a>
-          
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-          >
-            <a 
-              href="#contact" 
-              className="nav-btn"
+        <div className="hidden md:flex items-center gap-2 lg:gap-4">
+          {navLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              onClick={() => setActiveLink(link.name)}
+              className={`font-montserrat font-bold text-[14px] lg:text-[15px] px-4 py-2 rounded-full transition-all duration-300 ${activeLink === link.name
+                ? 'bg-brand-gray-accent text-brand-black shadow-lg shadow-white/10'
+                : 'text-white hover:text-brand-gray-accent hover:bg-white/5'
+                }`}
             >
-              CONTACT ME
+              {link.name}
             </a>
-          </motion.div>
+          ))}
         </div>
 
         {/* Mobile Toggle */}
-        <button 
+        <button
           className="md:hidden text-white"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
@@ -76,27 +76,33 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-brand-gray-accent/95 backdrop-blur-md border-b border-black/10 overflow-hidden"
+            className="md:hidden bg-brand-black/95 backdrop-blur-md border-b border-white/10 overflow-hidden text-white"
           >
             <div className="flex flex-col p-6 gap-4">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-lg text-gray-700 hover:text-black font-semibold"
-                  onClick={() => setMobileMenuOpen(false)}
+                  className={`text-lg font-semibold px-6 py-2 rounded-full transition-all duration-300 ${activeLink === link.name
+                    ? 'bg-brand-gray-accent text-brand-black'
+                    : 'text-white hover:bg-white/10'
+                    }`}
+                  onClick={() => {
+                    setActiveLink(link.name);
+                    setMobileMenuOpen(false);
+                  }}
                 >
                   {link.name}
                 </a>
               ))}
-              <div className="flex items-center gap-6 mt-4 pt-4 border-t border-black/5">
-                <a href="https://github.com" target="_blank" rel="noreferrer" className="text-gray-600 hover:text-black">
+              <div className="flex items-center gap-6 mt-4 pt-4 border-t border-white/10">
+                <a href="https://github.com/SyamsundarPanga" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-white transition-colors">
                   <FaGithub size={20} />
                 </a>
-                <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="text-gray-600 hover:text-black">
+                <a href="https://www.linkedin.com/in/panga-syamsundar-rao-39b192226/" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-white transition-colors">
                   <FaLinkedin size={20} />
                 </a>
-                <a href="mailto:syamsundarpanga@gmail.com" className="text-gray-600 hover:text-black">
+                <a href="mailto:syampanga2003@gmail.com" className="text-gray-400 hover:text-white transition-colors">
                   <Mail size={20} />
                 </a>
               </div>

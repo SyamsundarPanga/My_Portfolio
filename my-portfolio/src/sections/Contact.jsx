@@ -78,9 +78,6 @@ const Contact = () => {
         </form>
       </div>
 
-      <div className="flex justify-center opacity-20">
-        <div className="w-24 md:w-40 h-[10px] md:h-[12px] border-y-2 border-brand-black" />
-      </div>
     </Section>
   );
 };

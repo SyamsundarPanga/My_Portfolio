@@ -1,9 +1,25 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Mail } from 'lucide-react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const Hero = () => {
+  const roles = [
+    "Full Stack Java Specialist",
+    "Frontend Developer",
+    "Backend Developer"
+  ];
+
+  const [currentRole, setCurrentRole] = useState(0);
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentRole((prev) => (prev + 1) % roles.length);
+    }, 3000);
+    return () => clearInterval(timer);
+  }, [roles.length]);
+
   return (
     <section id="hero" className="relative flex flex-col diagonal-split overflow-hidden">
       {/* Background sectors */}
@@ -34,13 +50,24 @@ const Hero = () => {
               Syamsundar Rao
             </h1>
 
-            <p className="font-inter font-semibold text-[14px] sm:text-[18px] md:text-[22px] text-brand-gray-text mb-4 uppercase tracking-[0.1em]">
-              Frontend Developer / Full Stack Java Specialist
-            </p>
+            <div className="h-[30px] sm:h-[40px] md:h-[50px] overflow-hidden mb-4">
+              <AnimatePresence mode="wait">
+                <motion.p
+                  key={currentRole}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.5 }}
+                  className="font-inter font-semibold text-[14px] sm:text-[18px] md:text-[22px] text-brand-gray-text uppercase tracking-[0.1em]"
+                >
+                  {roles[currentRole]}
+                </motion.p>
+              </AnimatePresence>
+            </div>
 
             <div className="flex items-center justify-center lg:justify-start gap-4 md:gap-8">
               <a
-                href="https://github.com"
+                href="https://github.com/SyamsundarPanga"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-12 h-12 flex items-center justify-center bg-brand-black text-white rounded-full hover:scale-110 transition-all duration-300 shadow-lg"
@@ -48,7 +75,7 @@ const Hero = () => {
                 <FaGithub size={22} />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/panga-syamsundar-rao-39b192226/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-12 h-12 flex items-center justify-center bg-brand-black text-white rounded-full hover:scale-110 transition-all duration-300 shadow-lg"
@@ -56,7 +83,7 @@ const Hero = () => {
                 <FaLinkedin size={22} />
               </a>
               <a
-                href="mailto:syamsundarpanga@gmail.com"
+                href="mailto:syampanga2003@gmail.com"
                 className="w-12 h-12 flex items-center justify-center bg-brand-black text-white rounded-full hover:scale-110 transition-all duration-300 shadow-lg"
               >
                 <Mail size={22} />
@@ -83,9 +110,6 @@ const Hero = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/20 to-transparent pointer-events-none" />
               </div>
 
-              <div className="absolute bottom-10 md:bottom-20 -left-6 md:-left-10 text-[10px] md:text-[14px] font-inter text-white max-w-[100px] md:max-w-[140px] leading-tight text-justify bg-brand-black/40 p-2 md:p-3 backdrop-blur-md border border-white/10">
-                "Building robust backends and elegant frontends."
-              </div>
             </motion.div>
           </div>
 
@@ -93,23 +117,44 @@ const Hero = () => {
       </div>
 
       {/* Restore Tech Excellence Section */}
-      <div className="bg-brand-black py-4 text-white overflow-hidden relative z-20">
-        <div className="container mx-auto px-6 relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-12">
+      <div className="bg-brand-black py-4 md:py-8 text-white overflow-hidden relative z-20 transition-all duration-500">
+        <div className="container mx-auto px-6 relative z-10 flex flex-col md:flex-row md:items-start justify-between gap-8 md:gap-12">
           <div className="max-w-3xl">
             <h3 className="font-poppins font-bold text-[20px] md:text-[28px] uppercase tracking-[0.2em] mb-4 md:mb-6 border-l-4 border-white pl-4 md:pl-6">
               Tech Excellence
             </h3>
-            <p className="font-inter font-light text-[12px] md:text-[15px] leading-relaxed text-justify opacity-70">
-              Specializing in enterprise Java development, Spring Boot microservices,
-              and high-performance React applications. Delivering scalable solutions
-              with modern engineering practices and pixel-perfect design aesthetics.
-            </p>
+            <div className="font-inter font-light text-[12px] md:text-[15px] leading-relaxed text-justify opacity-70">
+              <p>
+                Full Stack Java Developer with 1+ years of experience building and delivering scalable web applications using Spring Boot, microservices, Hibernate/JPA, and React. I have hands-on experience in developing secure REST APIs using Spring Security and JWT, improving API performance, and creating reusable UI components for better user experience.
+              </p>
+              
+              <AnimatePresence>
+                {isExpanded && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: 'auto', opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.5, ease: "easeInOut" }}
+                    className="overflow-hidden"
+                  >
+                    <p className="mt-4">
+                      I am comfortable working with MySQL, PostgreSQL, and MongoDB, and have experience using tools like Docker, Maven, and Postman in day-to-day development. I also have basic exposure to AWS and CI/CD pipelines and have been involved in deploying applications and working with teams to ensure smooth and reliable production releases.
+                    </p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
           </div>
 
-          <div className="flex items-center gap-4 group cursor-pointer shrink-0">
-            <div className="w-[2px] h-8 bg-white" />
-            <span className="font-poppins font-semibold text-[15px] uppercase tracking-widest hover:text-brand-gray-light transition-colors">Read More</span>
-            <div className="w-[2px] h-8 bg-white" />
+          <div 
+            className="flex items-center gap-4 group cursor-pointer shrink-0 mt-4 md:mt-12"
+            onClick={() => setIsExpanded(!isExpanded)}
+          >
+            <div className="w-[2px] h-8 bg-white transition-all duration-300 group-hover:h-12" />
+            <span className="font-poppins font-semibold text-[15px] uppercase tracking-widest hover:text-brand-gray-light transition-colors">
+              {isExpanded ? 'Read Less' : 'Read More'}
+            </span>
+            <div className="w-[2px] h-8 bg-white transition-all duration-300 group-hover:h-12" />
           </div>
         </div>
 

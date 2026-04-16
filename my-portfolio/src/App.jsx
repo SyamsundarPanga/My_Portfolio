@@ -8,6 +8,8 @@ import Projects from './sections/Projects';
 import Contact from './sections/Contact';
 import Footer from './sections/Footer';
 
+import Education from './sections/Education';
+
 function App() {
   useEffect(() => {
     // Reveal animation on scroll observer
@@ -39,6 +41,7 @@ function App() {
         <About />
         <Skills />
         <Experience />
+        <Education />
         <Projects />
         <Contact />
       </main>

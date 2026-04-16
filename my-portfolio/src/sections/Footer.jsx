@@ -1,5 +1,5 @@
-import { ChevronsRight } from 'lucide-react';
-import { FaFacebookF, FaLinkedin, FaInstagram } from 'react-icons/fa';
+import { ChevronsRight, Mail } from 'lucide-react';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -24,14 +24,14 @@ const Footer = () => {
 
         {/* SOCIAL ICONS */}
         <div className="flex gap-8">
-          <a href="#" className="w-10 h-10 border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors">
-            <FaFacebookF size={18} />
+          <a href="https://github.com/SyamsundarPanga" target="_blank" rel="noreferrer" className="w-10 h-10 border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors">
+            <FaGithub size={18} />
           </a>
-          <a href="#" className="w-10 h-10 border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors">
+          <a href="https://www.linkedin.com/in/panga-syamsundar-rao-39b192226/" target="_blank" rel="noreferrer" className="w-10 h-10 border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors">
             <FaLinkedin size={18} />
           </a>
-          <a href="#" className="w-10 h-10 border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors">
-            <FaInstagram size={18} />
+          <a href="mailto:syampanga2003@gmail.com" className="w-10 h-10 border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors">
+            <Mail size={18} />
           </a>
         </div>
 

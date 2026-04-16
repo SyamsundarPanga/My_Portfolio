@@ -1,78 +1,107 @@
 import React from 'react';
 import Section from '../components/Section';
-import GlassCard from '../components/GlassCard';
-import Badge from '../components/Badge';
 import { motion } from 'framer-motion';
 import { 
   SiSpringboot, SiReact, SiJavascript, 
   SiTypescript, SiTailwindcss, SiMysql, SiPostgresql, 
-  SiMongodb, SiDocker, SiGit,
-  SiPostman, SiHibernate, SiHtml5, SiCss, SiSass, SiBootstrap, SiFigma, SiNodedotjs
+  SiMongodb, SiDocker, SiGit, SiPostman, SiHibernate, 
+  SiBootstrap, SiSpringsecurity, SiApachemaven, SiGithub
 } from 'react-icons/si';
 import { FaJava, FaAws } from 'react-icons/fa';
-import { Database, Layout, Server, Settings } from 'lucide-react';
+import { Network, Database, Layout, Settings, Cpu } from 'lucide-react';
+
+const SkillTile = ({ name, icon, index }) => {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 10 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: index * 0.05, duration: 0.4 }}
+      className="flex flex-col items-center gap-4 group"
+    >
+      <div className="square-icon text-brand-black/80 grayscale group-hover:grayscale-0 transition-all duration-300">
+        {React.cloneElement(icon, { size: 30 })}
+      </div>
+      <span className="font-montserrat font-bold text-[11px] md:text-[13px] tracking-[0.15em] text-brand-black/60 group-hover:text-brand-black transition-colors uppercase text-center">
+        {name}
+      </span>
+    </motion.div>
+  );
+};
 
 const Skills = () => {
-  const sections = [
+  const skillCategories = [
     {
-      title: "USING NOW:",
+      title: "Core Stack",
       skills: [
-        { name: "HTML5", icon: <SiHtml5 className="text-[#FF5722]" /> },
-        { name: "CSS3", icon: <SiCss className="text-[#2196F3]" /> },
-        { name: "SASS", icon: <SiSass className="text-[#CF649A]" /> },
-        { name: "JAVASCRIPT", icon: <SiJavascript className="text-[#F7DF1E]" /> },
-        { name: "REACT", icon: <SiReact className="text-[#61DAFB]" /> },
-        { name: "BOOTSTRAP", icon: <SiBootstrap className="text-[#563D7C]" /> },
-        { name: "GIT", icon: <SiGit className="text-[#F05032]" /> },
-        { name: "FIGMA", icon: <SiFigma className="text-[#F24E1E]" /> },
+        { name: "Java", icon: <FaJava /> },
+        { name: "Spring Boot", icon: <SiSpringboot /> },
+        { name: "React", icon: <SiReact /> },
+        { name: "Microservices", icon: <Network /> },
       ]
     },
     {
-      title: "LEARNING:",
+      title: "Backend",
       skills: [
-        { name: "NODEJS", icon: <SiNodedotjs className="text-[#339933]" /> },
-        { name: "MySQL", icon: <SiMysql className="text-[#4479A1]" /> },
-        { name: "MONGODB", icon: <SiMongodb className="text-[#47A248]" /> },
-        { name: "TYPESCRIPT", icon: <SiTypescript className="text-[#3178C6]" /> },
+        { name: "REST APIs", icon: <Settings /> },
+        { name: "Spring Security", icon: <SiSpringsecurity /> },
+        { name: "Hibernate/JPA", icon: <SiHibernate /> },
       ]
     },
     {
-      title: "OTHER SKILLS:",
+      title: "Frontend",
       skills: [
-        { name: "JAVA", icon: <FaJava className="text-[#007396]" /> },
-        { name: "SPRING BOOT", icon: <SiSpringboot className="text-[#6DB33F]" /> },
-        { name: "DOCKER", icon: <SiDocker className="text-[#2496ED]" /> },
-        { name: "C++", icon: null },
+        { name: "JavaScript", icon: <SiJavascript /> },
+        { name: "TypeScript", icon: <SiTypescript /> },
+        { name: "Tailwind CSS", icon: <SiTailwindcss /> },
+        { name: "Bootstrap", icon: <SiBootstrap /> },
+      ]
+    },
+    {
+      title: "Database",
+      skills: [
+        { name: "MySQL", icon: <SiMysql /> },
+        { name: "PostgreSQL", icon: <SiPostgresql /> },
+        { name: "MongoDB", icon: <SiMongodb /> },
+      ]
+    },
+    {
+      title: "Tools & Cloud",
+      skills: [
+        { name: "Docker", icon: <SiDocker /> },
+        { name: "GitHub", icon: <SiGithub /> },
+        { name: "Maven", icon: <SiApachemaven /> },
+        { name: "Postman", icon: <SiPostman /> },
+        { name: "AWS Basics", icon: <FaAws /> },
       ]
     }
   ];
 
   return (
-    <Section id="skills" title="Skills" className="bg-brand-gray-accent">
-      <div className="max-w-6xl mx-auto">
-        <div className="space-y-24 md:space-y-32">
-          {sections.map((section, idx) => (
-            <div key={idx} className="space-y-12 md:space-y-16">
-              <h4 className="font-montserrat font-bold text-[22px] md:text-[30px] text-brand-black tracking-[0.18em] text-center md:text-left">
-                {section.title}
-              </h4>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-16 md:gap-y-20 gap-x-8 md:gap-x-12">
-                {section.skills.map((skill, sIdx) => (
-                  <motion.div 
-                    key={sIdx}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: sIdx * 0.05 }}
-                    className="flex flex-col items-center gap-4 md:gap-6 group"
-                  >
-                    <div className="text-[60px] md:text-[80px] lg:text-[100px] transition-transform duration-300 group-hover:scale-110 grayscale hover:grayscale-0 opacity-80 group-hover:opacity-100">
-                      {skill.icon || <div className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 bg-brand-gray-light rounded-full flex items-center justify-center font-bold text-black">{skill.name[0]}</div>}
-                    </div>
-                    <span className="font-montserrat font-normal text-[16px] md:text-[20px] lg:text-[24px] text-brand-black tracking-[0.13em] text-center">
-                      {skill.name}
-                    </span>
-                  </motion.div>
+    <Section id="skills" title="Skills" className="bg-brand-gray-accent py-16">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="space-y-16">
+          {skillCategories.map((category, catIdx) => (
+            <div key={catIdx} className="space-y-8">
+              <motion.div 
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="flex items-center gap-6"
+              >
+                <div className="w-[6px] h-10 md:h-12 bg-brand-black" />
+                <h4 className="font-montserrat font-bold text-[20px] md:text-[28px] text-brand-black tracking-[0.25em] uppercase">
+                  {category.title}
+                </h4>
+              </motion.div>
+              
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 md:gap-12">
+                {category.skills.map((skill, skillIdx) => (
+                  <SkillTile
+                    key={skillIdx}
+                    {...skill}
+                    index={skillIdx}
+                  />
                 ))}
               </div>
             </div>
